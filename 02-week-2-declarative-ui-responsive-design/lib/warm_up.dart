@@ -29,6 +29,7 @@ class ProfileCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
+        // mainAxisSize: MainAxisSize.max, //default
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
