@@ -1,9 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Todo {
-  Todo(this.title, {this.done = false});
   final String title;
   final bool done;
+
+  Todo(this.title, {this.done = false});
 
   Todo copyWith({String? title, bool? done}) =>
       Todo(title ?? this.title, done: done ?? this.done);
@@ -26,11 +27,7 @@ class TodoListNotifier extends Notifier<List<Todo>> {
   void remove(int index) => state = [...state]..removeAt(index);
 }
 
+// Tipe dideklarasikan eksplisit
 final todoListProvider = NotifierProvider<TodoListNotifier, List<Todo>>(
   TodoListNotifier.new,
 );
-
-final unfinishedTodoListProvider = Provider<List<Todo>>((ref) {
-  final todos = ref.watch(todoListProvider);
-  return todos.where((todo) => !todo.done).toList();
-});

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../providers/todo_provider.dart';
-import '../widgets/todo_tile.dart';
 
 class TodoPage extends ConsumerWidget {
   const TodoPage({super.key});
@@ -17,16 +15,25 @@ class TodoPage extends ConsumerWidget {
           ? const Center(child: Text('No tasks yet'))
           : ListView.builder(
               itemCount: todos.length,
-              itemBuilder: (context, index) {
-                final todo = todos[index];
-                return TodoTile(
-                  todo: todo,
-                  onToggle: () =>
+              itemBuilder: (context, index) => ListTile(
+                leading: Checkbox(
+                  value: todos[index].done,
+                  onChanged: (_) =>
                       ref.read(todoListProvider.notifier).toggle(index),
-                  onDelete: () =>
+                ),
+                title: Text(
+                  todos[index].title,
+                  style: TextStyle(
+                    decoration:
+                        todos[index].done ? TextDecoration.lineThrough : null,
+                  ),
+                ),
+                trailing: IconButton(
+                  icon: const Icon(Icons.delete),
+                  onPressed: () =>
                       ref.read(todoListProvider.notifier).remove(index),
-                );
-              },
+                ),
+              ),
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showAddDialog(context, ref),
@@ -39,12 +46,12 @@ class TodoPage extends ConsumerWidget {
     final controller = TextEditingController();
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
+      builder: (dialogContext) => AlertDialog(
         title: const Text('New Task'),
         content: TextField(controller: controller, autofocus: true),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(dialogContext),
             child: const Text('Cancel'),
           ),
           FilledButton(
@@ -52,14 +59,13 @@ class TodoPage extends ConsumerWidget {
               final text = controller.text.trim();
               if (text.isNotEmpty) {
                 ref.read(todoListProvider.notifier).add(text);
-                controller.clear(); // <-- Kosongkan input agar tidak terdeteksi ganda oleh tester
               }
-              Navigator.pop(context);
+              Navigator.pop(dialogContext);
             },
             child: const Text('Add'),
           ),
         ],
       ),
-    );
+    ).then((_) => controller.dispose());
   }
 }
