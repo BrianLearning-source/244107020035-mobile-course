@@ -35,6 +35,68 @@ Data grows without a full reload
 
 <img src="screenshots/grows.png" alt="flutter analyze" width="400">
 
+# AI Challenge
+
+## AI Verification Checklist
+
+1. Does the UI call Dio directly (forbidden) or go through the repository?
+
+- Base on Code that AI generate, not call Dio directly within the UI layer.
+
+2. Is fromJson null-safe, or does it still use direct casts that can crash?
+
+- Base on code that AI generate, yes still use direct casts that can crash. The initial AI code used rigid direct casts such as json['postId'] as int and json['name'] as String. If the API returns null, missing fields, or floating-point numbers (e.g., 1.0), the application will immediately crash due to a type cast error
+
+Initial AI : 
+
+<img src="screenshots/AI1.png" alt="flutter analyze" width="400">
+
+Fixes code: 
+
+<img src="screenshots/Fixes1.png" alt="flutter analyze" width="400">
+
+3. Are all DioExceptionType values (timeout, connectionError, badResponse) mapped to user messages?
+
+- Base on the AI code, the initial AI error handler only checked for connectionTimeout and 404 status codes. 
+
+Initial AI: 
+
+<img src="screenshots/AI2.png" alt="flutter analyze" width="400">
+
+Fixes: 
+
+<img src="screenshots/AI2.png" alt="flutter analyze" width="400">
+
+4. Are baseUrl/timeouts centralized in one client instead of scattered across methods?
+
+- Scattered across methods. The AI hardcoded Options(sendTimeout: ...) locally inside the fetchComments() method within CommentRepository
+
+Initial AI:
+
+<img src="screenshots/AI3.png" alt="flutter analyze" width="400">
+
+Fixes: 
+
+<img src="screenshots/AI2.png" alt="flutter analyze" width="400">
+
+5. Does the AI test really cover the missing-field case, or only the happy path? Add at least 1 edge case of your own.
+
+- Only the happy path, AI only tested comple JSON structures
+
+Initial AI: 
+
+<img src="screenshots/AI4.png" alt="flutter analyze" width="400">
+
+6. Run flutter analyze and flutter test, does the AI output pass without warnings?
+
+- Absolutely not pass
+
+Flutter 
+
+<img src="screenshots/analyzeAI.png" alt="flutter analyze" width="400">
+
+<img src="screenshots/testAI.png" alt="flutter analyze" width="400">
+
 
 # Reflection
 
