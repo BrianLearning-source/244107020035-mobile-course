@@ -1,17 +1,26 @@
-# allweek
+# LAB 2 : PROVIDER AND ERROR HANDLING
 
-A new Flutter project.
+## Test three error scenarios
 
-## Getting Started
+1. Run the app with normal internet, observe loading, then the list of 100 posts.
 
-This project is a starting point for a Flutter application.
+<img src="screenshots/load.png" alt="flutter analyze" width="400">
+<img src="screenshots/normal1.png" alt="flutter analyze" width="400">
+<img src="screenshots/normal2.png" alt="flutter analyze" width="400">
 
-A few resources to get you started if this is your first Flutter project:
+2. Turn off the internet (airplane mode), press refresh, observe the friendly message + Retry button. Turn the internet back on, press Retry.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+No Internet Connection
+<img src="screenshots/noInternet.png" alt="flutter analyze" width="400">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+After Connect to the internet and press Retry 
+<img src="screenshots/normal1.png" alt="flutter analyze" width="400">
+
+3. Temporarily change baseUrl to a wrong URL, observe the connection error message. Restore it after the test.
+
+Change baseURL to wrong URL
+<img src="screenshots/wrongURL.png" alt="flutter analyze" width="400">
+<img src="screenshots/Timeout.png" alt="flutter analyze" width="400">
+
+
+
