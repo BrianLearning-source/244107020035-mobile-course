@@ -1,51 +1,63 @@
 import 'package:sqflite/sqflite.dart';
+
 import '../local/db.dart';
 import '../local/note.dart';
 
 class NoteRepository {
-    NoteRepository({Future<Database> Function()? openDb})
-        : _openDb = openDb ?? openNotesDb;
+  NoteRepository({Future<Database> Function()? openDb})
+    : _openDb = openDb ?? openNotesDb;
 
-    final Future<Database> Function() _openDb;
+  final Future<Database> Function() _openDb;
 
-    Future<List<Note>> fetchNotes() async {
-        final db = await _openDb();
-        final rows = await db.query('notes', orderBy: 'updated_at DESC');
-        return rows.map(Note.fromMap).toList();
-    }
+  Future<List<Note>> fetchNotes() async {
+    final db = await _openDb();
+    final rows = await db.query('notes', orderBy: 'updated_at DESC');
+    return rows.map(Note.fromMap).toList();
+  }
 
-    Future<Note> addNote({required String title, String body = ''}) async {
-        final db = await _openDb();
-        final note = Note(
-            title: title,
-            body: body,
-            updatedAt: DateTime.now(),
-            dirty: true,
-        );
-        final id = await db.insert('notes', note.toMap());
-        return Note(
-            id: id,
-            title: note.title,
-            body: note.body,
-            updatedAt: note.updatedAt,
-            dirty: true,
-        );
-    }
+  Future<Note> addNote({required String title, String body = ''}) async {
+    final db = await _openDb();
+    final note = Note(
+      title: title,
+      body: body,
+      updatedAt: DateTime.now(),
+      dirty: true,
+    );
+    final id = await db.insert('notes', note.toMap());
+    return Note(
+      id: id,
+      title: note.title,
+      body: note.body,
+      updatedAt: note.updatedAt,
+      dirty: true,
+    );
+  }
 
-    Future<void> deleteNote(int id) async {
-        final db = await _openDb();
-        await db.delete('notes', where: 'id = ?', whereArgs: [id]);
-    }
+  Future<void> deleteNote(int id) async {
+    final db = await _openDb();
+    await db.delete('notes', where: 'id = ?', whereArgs: [id]);
+  }
 
-    Future<int> countDirty() async {
-        final db = await _openDb();
-        final rows = await db.rawQuery(
-            'SELECT COUNT(*) AS c FROM notes WHERE dirty = 1');
-        return ((rows.first['c'] as num?)?.toInt() ?? 0);
-    }
+  Future<int> countDirty() async {
+    final db = await _openDb();
+    final rows = await db.rawQuery(
+      'SELECT COUNT(*) AS c FROM notes WHERE dirty = 1',
+    );
+    return ((rows.first['c'] as num?)?.toInt() ?? 0);
+  }
 
-    Future<void> markAllSynced() async {
-        final db = await _openDb();
-        await db.update('notes', {'dirty' : 0}, where: 'dirty = 1');
-    }
+  Future<void> markAllSynced() async {
+    final db = await _openDb();
+    await db.update('notes', {'dirty': 0}, where: 'dirty = 1');
+  }
+
+  Future<int> syncNotes(NoteRepository repo) async {
+    final dirtyCount = await repo.countDirty();
+    if (dirtyCount == 0) return 0;
+    // Simulate upload: in a real project, send each dirty note
+    // to the REST API here, then mark it clean on a 2xx response.
+    await Future.delayed(const Duration(seconds: 1));
+    await repo.markAllSynced();
+    return dirtyCount;
+  }
 }

@@ -17,7 +17,7 @@ Future<Database> openNotesDb() async {
           )
         ''');
       await db.execute('''
-        CREATE TABEL cached_posts(
+        CREATE TABLE cached_posts(
           id INTEGER PRIMARY KEY,
           payload TEXT NOT NULL,
           cached_at TEXT NOT NULL
