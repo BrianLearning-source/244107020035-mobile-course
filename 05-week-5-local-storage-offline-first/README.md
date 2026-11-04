@@ -1,17 +1,11 @@
-# allweek
+# Self-verification checklist
 
-A new Flutter project.
+1. The UI never calls SQLite/SharedPreferences directly; everything goes through repository + provider.
 
-## Getting Started
+2. The app fully works in airplane mode: read, add, and delete notes.
 
-This project is a starting point for a Flutter application.
+3. The dirty badge is accurate before/after sync; cached posts render without internet.
 
-A few resources to get you started if this is your first Flutter project:
+4. flutter analyze is clean and all tests pass.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+5. AI output is verified and documented in the docs/ folder.

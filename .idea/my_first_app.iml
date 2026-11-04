@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/01-week-1-mobile-development-ecosystem-flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/01-week-1-mobile-development-ecosystem-flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/01-week-1-mobile-development-ecosystem-flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/02-week-2-declarative-ui-responsive-design/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/02-week-2-declarative-ui-responsive-design/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/02-week-2-declarative-ui-responsive-design/build" />
+      <excludeFolder url="file://$MODULE_DIR$/03-week-3-navigation-state-management/week3_navigation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/03-week-3-navigation-state-management/week3_navigation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/03-week-3-navigation-state-management/week3_navigation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/03-week-3-navigation-state-management/week3_todo/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/03-week-3-navigation-state-management/week3_todo/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/03-week-3-navigation-state-management/week3_todo/build" />
+      <excludeFolder url="file://$MODULE_DIR$/04-week-4-networking-rest-api/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/04-week-4-networking-rest-api/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/04-week-4-networking-rest-api/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-week-5-local-storage-offline-first/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/06-week-6-authentication-security-fcm/week6/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/06-week-6-authentication-security-fcm/week6/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/06-week-6-authentication-security-fcm/week6/build" />
+      <excludeFolder url="file://$MODULE_DIR$/07-week-7-clean-architecture/allweek/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/07-week-7-clean-architecture/allweek/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/07-week-7-clean-architecture/allweek/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

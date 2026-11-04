@@ -1,4 +1,4 @@
-=import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'pages/notes_page.dart'; // Sesuaikan dengan halaman utama yang kamu buat
 import 'pages/settings_page.dart'; // Tempat darkModeProvider didefinisikan
